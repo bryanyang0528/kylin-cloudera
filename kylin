@@ -1,0 +1,56 @@
+#/bin/bash
+
+start(){
+   $KYLIN_HOME/bin/kylin.sh start
+}
+
+stop(){
+   $KYLIN_HOME/bin/kylin.sh stop
+}
+
+restart(){
+   stop
+   start
+}
+
+checkstatus(){
+   PID=`netstat -nlopt | grep 7070 | awk -F" " '{print $7}'`
+   echo $PID
+}
+
+check_for_root() {
+  if [ $(id -ur) -ne 0 ]; then
+    echo 'Error: root user required'
+    echo
+    exit 1
+  fi
+}
+
+service() {
+  case "$1" in
+    start)
+      check_for_root
+      start
+      ;;
+    stop)
+      check_for_root
+      stop
+      ;;
+    status)
+      checkstatus
+      RETVAL=$?
+      ;;
+    restart)
+      check_for_root
+      restart
+      ;;
+    *)
+      echo $"Usage: $0 {start|stop|status|restart}"
+      exit 1
+  esac
+}
+
+service "$@"
+
+exit $RETVAL
+
