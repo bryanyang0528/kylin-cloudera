@@ -12,7 +12,8 @@ RUN curl -O http://apache.stu.edu.tw/kylin/apache-kylin-2.1.0/apache-kylin-2.1.0
 ADD kylin /etc/init.d
 ADD docker-quickstart-kylin /usr/bin
 
-RUN chmod -x /etc/init.d/kylin
+RUN chmod 755 /etc/init.d/kylin && \
+    chmod 755 /usr/bin/docker-quickstart-kylin
 
 EXPOSE 7070
 ENTRYPOINT ["/usr/bin/docker-quickstart-kylin"]

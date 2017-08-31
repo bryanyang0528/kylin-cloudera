@@ -1,4 +1,6 @@
-#/bin/bash
+#!/usr/bin/env bash
+
+KYLIN_HOME=/usr/lib/kylin
 
 start(){
    $KYLIN_HOME/bin/kylin.sh start
