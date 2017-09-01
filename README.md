@@ -17,6 +17,18 @@ User can choose Spark as the computing engine in this image.
 * Hive 1.1.0
 
 # Usage
+## Pull images
+
+[Kylin-Cloudera](https://hub.docker.com/r/bryanyang0528/kylin-cloudera/)
+
+`docker pull docker pull bryanyang0528/kylin-cloudera`
+
+## Build the Dockerfile (Optional)
+
+1. `git clone https://github.com/bryanyang0528/kylin-cloudera`
+2. `cd kylin-cloudera`
+3. `sudo docker build -t kylin-cloudera:latest .`
+
 ## Run Kylin as a service
 
 1. `sudo docker run --hostname=quickstart.cloudera --privileged=true -t -d  -p 7070:7070 kylin-cloudera:latest`
