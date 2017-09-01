@@ -15,5 +15,5 @@ ADD docker-quickstart-kylin /usr/bin
 RUN chmod 755 /etc/init.d/kylin && \
     chmod 755 /usr/bin/docker-quickstart-kylin
 
-EXPOSE 7070
+EXPOSE 80 7070 8888 18080 50070
 ENTRYPOINT ["/usr/bin/docker-quickstart-kylin"]

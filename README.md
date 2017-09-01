@@ -20,8 +20,15 @@ User can choose Spark as the computing engine in this image.
 ## Run Kylin as a service
 
 1. `sudo docker run --hostname=quickstart.cloudera --privileged=true -t -d  -p 7070:7070 kylin-cloudera:latest`
-2. Login to Kylin through `http://<host ip>:7070`   PW:`ADMIN//KYLIN`
+2. Login to Kylin through `http://<host ip>:7070/kylin/login`   PW:`ADMIN//KYLIN`
 
 ## Login to the container
 `sudo docker exec -it <container id> /bin/bash`
 
+## Ports of Services
+
+* 80L Cloudera Tutorial
+* 7070: Kylin
+* 8888: Hue
+* 18080: Spark Web UI
+* 50070: Hadoop NameNode 
