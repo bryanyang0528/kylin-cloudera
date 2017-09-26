@@ -1,0 +1,8 @@
+version: '3'
+services:
+  kylin:
+    image: bryanyang0528/kylin-cloudera:latest
+    deploy:
+      replicas: 2
+    ports:
+      - "7070:7070"
