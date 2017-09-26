@@ -16,4 +16,5 @@ RUN chmod 755 /etc/init.d/kylin && \
     chmod 755 /usr/bin/docker-quickstart-kylin
 
 EXPOSE 80 7070 8888 18080 50070
+VOLUME ["/var/lib/hadoop-hdfs", "/var/lib/mysql"]
 ENTRYPOINT ["/usr/bin/docker-quickstart-kylin"]
