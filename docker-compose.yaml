@@ -1,6 +1,13 @@
 version: '2'
 services:
   kylin:
-    image: bryanyang0528/kylin-cloudera:latest
+    build: .
     ports:
       - "7070:7070"
+    hostname: quickstart.cloudera
+    privileged: true
+    tty: true
+    volumes:
+      - /data/hadoop-hdfs:/var/lib/hadoop-hdfs
+      - /data/mysql:/var/lib/mysql
+      

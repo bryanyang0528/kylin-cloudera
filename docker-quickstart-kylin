@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+sudo chown -R hdfs:hadoop /var/lib/hadoop-hdfs
+sudo chown -R mysql:mysql /var/lib/mysql
+sudo -u hdfs hdfs dfs -chmod 775 /
+
 DAEMONS="\
     mysqld \
     cloudera-quickstart-init"
@@ -46,4 +50,5 @@ fi
 for daemon in ${DAEMONS}; do
     sudo service ${daemon} start
 done
+
 exec bash
